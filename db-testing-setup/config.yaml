@@ -1,0 +1,10 @@
+vpcId:
+    vpc-07306efef440b0f25
+keyName:
+    db-server
+# from company by over wall,from company by over proxy wall, from company, from jp proxy
+allowFromIps:
+    - 18.163.3.225/32
+    - 18.162.58.82/32
+    - 218.17.161.141/32
+    - 3.115.130.147/32
