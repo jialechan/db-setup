@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+
+  mariadb:
+    image: mariadb:10.4
+    ports:
+      - 3306:3306
+    restart: always
+    volumes:
+      - /data/mysql:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 7777:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mariadb
+    depends_on:
+      - mariadb
+
