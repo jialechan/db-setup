@@ -15,7 +15,7 @@ npm install
 cdk deploy
 ```
 ## 生成db-server.pem
-``shell
+```shell
 # 略
 chmod 400 db-server.pem
 ```
